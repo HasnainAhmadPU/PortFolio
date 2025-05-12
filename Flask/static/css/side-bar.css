@@ -1,0 +1,123 @@
+@media (max-width: 600px) {
+    .sider-bar { width: 90px; top: 70px; }
+    .divis { height: 85px; width: 82px; }
+    .img { width: 28px; height: 28px; margin-bottom: 8px; }
+    .text { font-size: 11px; height: 16px; }
+}
+@media (min-width: 1001px) {
+    .sider-bar { top: 70px; }
+}
+@media (max-width: 1000px){
+    .sider-bar{
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        width: 80px;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        bottom: 0;
+        z-index: 200;
+        background-color: white;
+        display: inline-block;
+        padding-top: 5px;
+    }
+    .divis{
+        margin-left: 3px;
+        margin-right: 3px;
+        height: 74px;
+        width: 72px;
+    }
+    .button{
+        cursor: pointer;
+        background-color: white;
+        border: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .button:hover{
+        background-color: rgba(0, 0, 0, 0.116);
+    }
+    .img{
+        width: 24px;
+        height: 24px;
+        margin-bottom: 6px;
+    }
+    .text{
+        font-size: 10px;
+        height: 15px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (min-width: 1001px){
+    .sider-bar{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        width: 156px;
+        position: fixed;
+        top: 52px;
+        left: 0;
+        bottom: 0;
+        z-index: 200;
+        background-color: white;
+        display: inline-block;
+        padding-top: 5px;
+    }
+    .divis{
+        height: 74px;
+        width: 150px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .button{
+        cursor: pointer;
+        background-color: white;
+        border: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        border-radius: 10px;
+    }
+    .button:hover{
+        background-color: rgba(0, 0, 0, 0.116);
+    }
+    .img{
+        margin-left: 6px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .text{
+        margin-left: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        font-size: 10px;
+        height: 15px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .text .text{
+        margin-left: 12px;
+    }
+}

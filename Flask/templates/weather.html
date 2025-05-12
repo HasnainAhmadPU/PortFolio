@@ -1,0 +1,123 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasnain Ahmad - Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+</head>
+
+<body>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/back.jpg') }}");
+            background-size: cover;
+        }
+    </style>
+    <header class="main-header">
+        <div class="header-brand">
+            <p><span class="animated-text">Portfolio</span></p>
+        </div>
+        <button class="hamburger-btn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav class="header-nav" data-animation="diagonal">
+            <a href="{{ url_for('home') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Home
+            </a>
+            <a href="{{ url_for('skill') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Skills
+            </a>
+            <a href="{{ url_for('project') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Projects
+            </a>
+            <button class="contact-btn" data-url="{{ url_for('contact') }}">Contact Me</button>
+        </nav>
+    </header>
+    <div class="weather-wrapper">
+        <main class="weather-container">
+            <section class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Search City">
+                <button class="search-btn" id="search-btn">
+                    <img src="{{ url_for('static', filename='images/search.svg') }}" alt="Search" class="search-icon">
+                </button>
+            </section>
+
+            <section class="weather-display">
+                <img src="{{ url_for('static', filename='images/sun.png') }}" alt="Weather icon" class="weather-icon"
+                    id="weather-icon">
+                <div class="temperature" id="temperature"></div>
+                <div class="location" id="location">Location</div>
+            </section>
+
+            <section class="weather-details">
+                <div class="detail-card humidity">
+                    <img src="{{ url_for('static', filename='images/humidity.png') }}" alt="Humidity"
+                        class="detail-icon">
+                    <div class="detail-info">
+                        <span class="detail-value" id="humidity"></span>
+                        <span class="detail-label">Humidity</span>
+                    </div>
+                </div>
+                <div class="detail-card wind">
+                    <img src="{{ url_for('static', filename='images/wind.png') }}" alt="Wind speed" class="detail-icon">
+                    <div class="detail-info">
+                        <span class="detail-value" id="wind-speed"></span>
+                        <span class="detail-label">Wind Speed</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="content-container">
+        <footer class="main-footer">
+            <div class="footer-column social-column">
+                <h3 class="footer-title">Follow me</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100090556634789"><img
+                            src="{{ url_for('static', filename='images/fb.png') }}" class="social-icon"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/about_hasnain/"><img
+                            src="{{ url_for('static', filename='images/insta.png') }}" class="social-icon"
+                            alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/hasnain-ahmad-52a370281/"><img
+                            src="{{ url_for('static', filename='images/in.png') }}" class="social-icon"
+                            alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <a href="{{ url_for('home') }}" class="footer-link">Home</a>
+                <a href="{{ url_for('skill') }}" class="footer-link">Skills</a>
+                <a href="{{ url_for('project') }}" class="footer-link">Projects</a>
+                <a href="{{ url_for('contact') }}" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-column contact-column">
+                <h3 class="footer-title">Contact</h3>
+                <p class="contact-info">Email: hasnainirshad44@gmail.com</p>
+                <p class="contact-info">Phone: +923097977417</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="loader">
+        <div class="loading-text">Loading...</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+</body>

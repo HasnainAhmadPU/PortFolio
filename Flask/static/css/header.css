@@ -1,0 +1,213 @@
+@media (max-width: 600px) {
+    .header { height: 70px; }
+    .youtube-logo { height: 24px; }
+    .hamburger-menu { height: 28px; margin: 0 20px; }
+    .search-bar { height: 38px; }
+    .search-button { height: 41px; width: 65px; }
+    .voice-search-icon-button,
+    .upload-button,
+    .notification-button,
+    .profile-button { 
+        height: 42px; 
+        width: 42px; 
+    }
+    .search-logo,
+    .voice-search-icon,
+    .notification-logo,
+    .upload-logo { width: 26px; }
+    .profile-logo { height: 36px; width: 36px; }
+    .end-section { width: 180px; }
+    .tool-tip { bottom: -55px; }
+}
+.header{
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    height: 57px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+}
+.start-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+.youtube-logo{
+    height: 20px;
+    cursor: pointer;
+}
+.hamburger-menu{
+    height: 24px;
+    margin-left: 28px;
+    margin-right: 24px;
+    cursor: pointer;
+}
+.middle-section{
+    max-width: 580px;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.search-bar{
+    width: 0;
+    padding-left: 15px;
+    height: 34px;
+    flex: 1;
+    border: none;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+    max-width: 500px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-size: 16px;
+}
+.search-bar::placeholder{
+    font-size: 16px;
+}
+.search-button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37px;
+    width: 60px;
+    background-color: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left: 0;
+    margin-right: 8px;
+}
+.search-button:hover{
+    background-color: rgba(0, 0, 0, 0.064);
+    cursor: pointer;
+}
+.search-logo{
+    width: 24px;
+    cursor: pointer;
+}
+.voice-search-icon-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 38px;
+    padding-top: 4px;
+    padding-left: 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.051);
+    position: relative;
+    display: flex;
+}
+.voice-search-icon-button:hover{
+    background-color: rgba(0, 0, 0, 0.106);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.071);
+}
+.voice-search-icon{
+    width: 24px;
+}
+.end-section{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-right: 20px;
+    margin-left: 25px;
+}
+.upload-button{
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+}
+.upload-button:hover{
+    background-color: rgba(0, 0, 0, 0.081);
+    cursor: pointer;
+}
+.notification-button{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    height: 38px;
+    width: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+}
+.notification-button:hover{
+    background-color: rgba(0, 0, 0, 0.081);
+    cursor: pointer;
+}
+.notification-count{
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    background-color: rgb(194, 10, 10);
+    color: white;
+    padding: 2px 6px 2px 6px;
+    border-radius: 50%;
+
+}
+.profile-button{
+    height: 38px;
+    width: 38px; 
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.profile-button:hover{
+    cursor: pointer;
+}
+.profile-logo{
+    height: 32px;
+    border-radius: 50%;
+    width: 32px; 
+}
+.notification-logo{
+    height: 24px;
+    width: 24px;
+}
+.upload-logo{
+    height: 24px;
+    width: 24px;
+}
+.search-button .tool-tip,.voice-search-icon-button .tool-tip,.upload-button .tool-tip,.notification-button .tool-tip,
+.profile-button .tool-tip{
+   opacity: 0;
+   border-radius: 4px;
+   position: absolute;
+   bottom: -45px;
+   padding: 8px 6px 8px 6px;
+   background-color: rgba(97, 97, 97, 0.61);
+   color: white;
+   pointer-events: none;
+   white-space: nowrap;
+}
+.search-button:hover .tool-tip,.voice-search-icon-button:hover .tool-tip,.upload-button:hover .tool-tip,.notification-button:hover .tool-tip,
+.profile-button:hover .tool-tip{
+    opacity: 1;
+    transition: 0.25s;
+}

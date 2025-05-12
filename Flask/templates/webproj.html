@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasnain Ahmad - Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/webproj.css') }}">
+</head>
+
+<body>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/back.jpg') }}");
+            background-size: cover;
+        }
+
+        #games {
+            background-image: url("{{ url_for('static', filename='images/games.avif') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #clone {
+            background-image: url("{{ url_for('static', filename='images/yt.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #tools {
+            background-image: url("{{ url_for('static', filename='images/tools.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #games img,
+        #clone img,
+        #tools img {
+
+            max-width: 100%;
+            max-height: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    </style>
+    <header class="main-header">
+        <div class="header-brand">
+            <p><span class="animated-text">Portfolio</span></p>
+        </div>
+        <button class="hamburger-btn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav class="header-nav" data-animation="diagonal">
+            <a href="{{ url_for('home') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Home
+            </a>
+            <a href="{{ url_for('skill') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Skills
+            </a>
+            <a href="{{ url_for('project') }}">
+                <span class="border border-top"></span>
+                <span class="border border-right"></span>
+                <span class="border border-bottom"></span>
+                <span class="border border-left"></span>
+                Projects
+            </a>
+            <button class="contact-btn" data-url="{{ url_for('contact') }}">Contact Me</button>
+        </nav>
+    </header>
+    <section class="project-section">
+        <div class="project-container">
+            <h2 class="project-title">Web Projects</h2>
+            <div class="project-grid">
+
+                <a href="{{ url_for('games') }}" class="project-card" id="games">
+                    <h3 class="project-name">Games</h3>
+                </a>
+
+                <a href="{{ url_for('tools') }}" class="project-card" id="tools">
+                    <h3 class="project-name">Tools</h3>
+                </a>
+                <a href="{{ url_for('youtube') }}" class="project-card" id="clone">
+                    <h3 class="project-name">Youtube Clone</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="content-container" id="mainContact">
+        <footer class="main-footer">
+            <div class="footer-column social-column">
+                <h3 class="footer-title">Follow me</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100090556634789"><img
+                            src="{{ url_for('static', filename='images/fb.png') }}" class="social-icon"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/about_hasnain/"><img
+                            src="{{ url_for('static', filename='images/insta.png') }}" class="social-icon"
+                            alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/hasnain-ahmad-52a370281/"><img
+                            src="{{ url_for('static', filename='images/in.png') }}" class="social-icon"
+                            alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <a href="{{ url_for('home') }}" class="footer-link">Home</a>
+                <a href="{{ url_for('skill') }}" class="footer-link">Skills</a>
+                <a href="{{ url_for('project') }}" class="footer-link">Projects</a>
+                <a href="{{ url_for('contact') }}" class="footer-link">Contact</a>
+            </div>
+
+            <div class="footer-column contact-column">
+                <h3 class="footer-title">Contact</h3>
+                <p class="contact-info">Email: hasnainirshad44@gmail.com</p>
+                <p class="contact-info">Phone: +923097977417</p>
+            </div>
+        </footer>
+    </div>
+    </main>
+    <div id="loader">
+        <div class="loading-text">Loading...</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/webproj.js') }}"></script>
+</body>
+
+</html>
