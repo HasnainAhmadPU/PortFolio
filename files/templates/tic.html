@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tic.css') }}">
+</head>
+<body>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/tic-back.jpg') }}");
+            background-size: cover;
+        }
+        </style>
+    <div class="game-container">
+        <canvas id="scoreCanvas"></canvas>
+        <div id="board"></div>
+        <button class="btn-p">Play Again</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/tic.js') }}"></script>
+</body>
+</html>

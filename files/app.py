@@ -26,6 +26,10 @@ def project():
 def tools():
     return render_template('tools.html')
 
+@app.route('/tic')
+def tic():
+    return render_template('tic.html')
+
 @app.route('/cpp')
 def cpp():
     return render_template('cpp.html')

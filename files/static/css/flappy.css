@@ -45,6 +45,7 @@ body {
         max-width: 500px;
         max-height: 600px;
     }
+
     #board {
         max-width: 480px;
         max-height: 580px;
@@ -61,38 +62,23 @@ body {
 }
 
 .btn-p {
-    display: flex;
     height: 40px;
     min-width: 120px;
     padding: 0 20px;
-    background-color: rgb(50, 202, 184);
+    background-color: #00b894;
     color: white;
     font-size: 16px;
     border-radius: 5px;
-    border: 2px solid rgb(50, 202, 184);
+    border: 2px solid #00b894;
     cursor: pointer;
     outline: none;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
     font-family: monospace;
-    box-shadow: 0 6px 8px rgba(169, 110, 110, 0.3);
+    box-shadow: 2px solid #00b894;
+}
+.btn-p:hover{
+    opacity: 0.8;
 }
 
-.btn-p::before {
-    position: absolute;
-    left: var(--Xpos);
-    top: var(--Ypos);
-    content: "";
-    height: 0;
-    width: 0;
-    border-radius: 50%;
-    background-color: rgb(34, 184, 69);
-    transform: translate(-50%, -50%);
-    transition: width 1s, height 1s;
-}
 @media (max-width: 480px) {
     .canvas-wrapper {
         max-height: 65vh;

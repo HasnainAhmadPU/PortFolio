@@ -1,0 +1,129 @@
+:root {
+    --board-padding: 1.5rem;
+    --tile-gap: 0.5rem;
+    --border-radius: 1rem;
+    --tile-border: 2px solid rgba(160, 165, 173, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    gap: 20px;
+}
+
+#gameTitle {
+    color: white;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--tile-gap);
+    width: 100%;
+    max-width: min(90vw, 400px);
+    aspect-ratio: 1/1;
+    background: url("./top-view-soil_23-2148175893.avif") center/cover;
+    border: 3px solid rgb(31, 83, 162);
+    border-radius: var(--border-radius);
+    padding: var(--board-padding);
+}
+
+.tile {
+    position: relative;
+    border: var(--tile-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-image: url("./Warp_Pipe_-_2D_shaded-removebg-preview copy.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1/1;
+    transition: transform 0.1s ease;
+}
+
+.tile:hover {
+    transform: scale(1.03);
+}
+
+.tile img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+}
+
+#scoreCanvas {
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+    pointer-events: none;
+}
+
+.btn-p {
+    height: 40px;
+    min-width: 120px;
+    padding: 0 20px;
+    background-color: #00b894;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #00b894;
+    cursor: pointer;
+    outline: none;
+    font-family: monospace;
+    box-shadow: 2px solid #00b894;
+}
+.btn-p:hover{
+    opacity: 0.8;
+}
+
+.rotate-image {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --board-padding: 1rem;
+        --tile-gap: 0.3rem;
+    }
+
+    .game-container {
+        gap: 1rem;
+    }
+
+    #board {
+        border-width: 2px;
+    }
+}
