@@ -30,6 +30,10 @@ def tools():
 def tic():
     return render_template('tic.html')
 
+@app.route('/mole')
+def mole():
+    return render_template('mole.html')
+
 @app.route('/cpp')
 def cpp():
     return render_template('cpp.html')

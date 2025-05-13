@@ -104,9 +104,13 @@ function update() {
     while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
         pipeArray.shift();
     }
-    context.fillStyle = "black";
-    context.font = "20px monospace";
-    context.fillText("Score: " + score, 20, 60);
+    context.fillStyle = "#ffffff";
+    context.font = "bold 20px 'Courier New', monospace";
+    context.textAlign = "left";
+    context.textBaseline = "middle";
+    context.shadowColor = "#000000";
+    context.shadowBlur = 4;
+    context.fillText(`SCORE: ${Math.floor(score)}`, 20, 40);
 }
 
 function placePipes() {
@@ -158,9 +162,12 @@ function detectCollosion(a, b) {
 }
 
 function showGameOver() {
-    context.fillStyle = "red";
-    context.font = "20px Monospace";
-    context.fillText("Game Over", 20, 100);
+     context.fillStyle = "#ff3333";
+    context.font = "bold 20px 'Courier New', monospace";
+    context.textAlign = "left";
+    context.textBaseline = "middle";
+    context.shadowColor = "rgba(0,0,0,0.5)";
+    context.fillText("GAME OVER", 20, 70);
 }
 
 const btn = document.querySelector(".btn-p");

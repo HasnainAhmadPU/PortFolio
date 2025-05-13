@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Mole</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mole.css') }}">
+</head>
+
+<body>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/mole-back.jpg') }}");
+            background-size: cover;
+        }
+        #board div {
+            background-image: url("{{ url_for('static', filename='images/molepipe.png') }}");
+            background-size: 60% 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    <div class="main-div">
+        <canvas id="scoreCanvas"></canvas>
+        <div id="board"></div>
+        <button class="btn-p">
+            <span>
+                Play Again
+            </span>
+        </button>
+    </div>
+    <script src="{{ url_for('static', filename='js/mole.js') }}"></script>
+</body>
+
+</html>

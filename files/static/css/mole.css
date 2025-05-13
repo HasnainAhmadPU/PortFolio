@@ -1,0 +1,129 @@
+:root {
+    --board-padding: 1.5rem;
+    --tile-gap: 0.5rem;
+    --border-radius: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.main-div {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#gameTitle {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 153px);
+    grid-template-rows: repeat(3, 130px);
+    gap: var(--tile-gap);
+    padding: var(--board-padding);
+    border: 3px solid white;
+    border-radius: var(--border-radius);
+    background-blend-mode: overlay;
+}
+
+#board div {
+    width: 153px;
+    height: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#board div img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+.btn-p {
+    height: 40px;
+    min-width: 120px;
+    padding: 0 20px;
+    background-color: #00b894;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #00b894;
+    cursor: pointer;
+    outline: none;
+    font-family: monospace;
+    box-shadow: 2px solid #00b894;
+}
+
+.btn-p:hover {
+    opacity: 0.8;
+}
+
+#scoreCanvas {
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    pointer-events: none;
+    margin: 0 auto;
+}
+
+@media (max-width: 568px) {
+    body {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .main-div {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 499px) {
+    .main-div {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 460px) {
+    .main-div {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 390px) {
+    .main-div {
+        transform: scale(0.6);
+    }
+}

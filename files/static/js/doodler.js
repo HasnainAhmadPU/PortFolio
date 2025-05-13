@@ -64,17 +64,17 @@ window.onload = function () {
         }
     });
     doodlerRightImg = new Image();
-    doodlerRightImg.src = "./static/images/doodler-right.png"; 
+    doodlerRightImg.src = "./static/images/doodler-right.png";
     doodler.img = doodlerRightImg;
     doodlerRightImg.onload = function () {
         context.drawImage(doodler.img, doodler.x, doodler.y, doodler.width, doodler.height);
     }
 
     doodlerLeftImg = new Image();
-    doodlerLeftImg.src = "./static/images/doodler-left.png"; 
+    doodlerLeftImg.src = "./static/images/doodler-left.png";
 
     platformImg = new Image();
-    platformImg.src = "./static/images/stick.jpeg";  
+    platformImg.src = "./static/images/stick.jpeg";
 
     velocityY = initialVelocityY;
     requestAnimationFrame(update);
@@ -132,9 +132,12 @@ function update() {
     updateScore();
 
     if (gameOver) {
-        context.fillStyle = "Red";
-        context.font = "20px monospace";
-        context.fillText("Game Over", 20, 67);
+        context.fillStyle = "#ff3333";
+        context.font = "bold 20px 'Courier New', monospace";
+        context.textAlign = "left";
+        context.textBaseline = "middle";
+        context.shadowColor = "rgba(0,0,0,0.5)";
+        context.fillText("GAME OVER", 20, 70);
     }
 }
 
@@ -212,9 +215,13 @@ function updateScore() {
         maxScore += points;
         if (score < maxScore) score = maxScore;
     }
-    context.fillStyle = "black";
-    context.font = "20px monospace";
-    context.fillText("Score: " + score, 20, 40);
+    context.fillStyle = "#ffffff";
+    context.font = "bold 20px 'Courier New', monospace";
+    context.textAlign = "left";
+    context.textBaseline = "middle";
+    context.shadowColor = "#000000";
+    context.shadowBlur = 4;
+    context.fillText(`SCORE: ${score}`, 20, 40);
 }
 
 function restart() {

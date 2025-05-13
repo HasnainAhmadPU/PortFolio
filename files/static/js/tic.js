@@ -102,20 +102,30 @@ class TicTacToe {
     }
     
     displayWinner(winner) {
-        this.ctx.fillStyle = 'white';
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.font = 'bold 20px "Courier New", monospace';
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.shadowColor = '#000000';
+        this.ctx.shadowBlur = 4;
         this.ctx.fillText(
-            `Player ${winner} wins!`,
+            `PLAYER ${winner} WINS!`,
             this.scoreCanvas.width / 2,
-            this.scoreCanvas.height / 2
+            this.scoreCanvas.height / 1.25
         );
     }
     
     displayDraw() {
-        this.ctx.fillStyle = 'white';
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.font = 'bold 20px "Courier New", monospace';
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.shadowColor = '#000000';
+        this.ctx.shadowBlur = 4;
         this.ctx.fillText(
-            "It's a draw!",
+            "IT'S A DRAW!",
             this.scoreCanvas.width / 2,
-            this.scoreCanvas.height / 2
+            this.scoreCanvas.height / 1.25
         );
     }
     
