@@ -14,42 +14,58 @@ window.onload = function () {
 
 function setGame() {
     const board = document.getElementById("board");
+
     for (let i = 0; i < 9; i++) {
         let tile = document.createElement("div");
         tile.id = i.toString();
         board.appendChild(tile);
         tile.addEventListener("click", selectTile);
     }
+
     playAgain.addEventListener("click", () => {
         if (gameOver) {
             restart();
         }
     });
+
     setInterval(setMole, 800);
     setInterval(setPlant, 900);
 }
 
 function createScoreCanvas() {
-    scoreCanvas = document.getElementById("scoreCanvas");
+    const board = document.getElementById("board");
+
+    // Create canvas dynamically
+    scoreCanvas = document.createElement("canvas");
+    scoreCanvas.id = "scoreCanvas";
     scoreCanvas.width = 400;
-    scoreCanvas.height = 100;
+    scoreCanvas.height = 50;
+    scoreCanvas.style.position = "absolute";
+    scoreCanvas.style.top = "0";
+    scoreCanvas.style.left = "0";
+    scoreCanvas.style.zIndex = "10";
+
+    // Ensure board is relatively positioned
+    board.style.position = "relative";
+
+    board.appendChild(scoreCanvas);
     scoreContext = scoreCanvas.getContext("2d");
 }
 
 function updateScoreDisplay() {
     scoreContext.clearRect(0, 0, scoreCanvas.width, scoreCanvas.height);
     scoreContext.fillStyle = "#ffffff";
-    scoreContext.font = "bold 28px 'Courier New', monospace";
+    scoreContext.font = "bold 23px 'Courier New', monospace";
     scoreContext.textAlign = "center";
     scoreContext.textBaseline = "middle";
     scoreContext.shadowColor = "#000000";
     scoreContext.shadowBlur = 4;
-    scoreContext.fillText(`SCORE: ${score}`, scoreCanvas.width/2, scoreCanvas.height/3);
+    scoreContext.fillText(`SCORE: ${score}`, scoreCanvas.width / 4, scoreCanvas.height / 2);
 
     if (gameOver) {
         scoreContext.fillStyle = "#ff3333";
-        scoreContext.font = "bold 32px 'Courier New', monospace";
-        scoreContext.fillText("GAME OVER", scoreCanvas.width/2, scoreCanvas.height/1.25);
+        scoreContext.font = "bold 23px 'Courier New', monospace";
+        scoreContext.fillText("GAME OVER", scoreCanvas.width / 1.2, scoreCanvas.height / 2);
     }
 }
 
@@ -93,7 +109,7 @@ function getRandomTile() {
 function selectTile() {
     if (gameOver) return;
 
-    if (this == currMoleTile && this.innerHTML.includes("img")) {
+    if (this === currMoleTile && this.innerHTML.includes("img")) {
         if (!clickedMoleTiles[this.id]) {
             score += 10;
             clickedMoleTiles[this.id] = true;
@@ -101,7 +117,7 @@ function selectTile() {
         }
     }
 
-    if (this == currPlantTile && this.innerHTML.includes("img")) {
+    if (this === currPlantTile && this.innerHTML.includes("img")) {
         gameOver = true;
         updateScoreDisplay();
     }
