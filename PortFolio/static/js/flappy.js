@@ -31,7 +31,7 @@ let bird = {
     y: birdY,
     width: birdWidth,
     height: birdHeight
-}
+};
 
 window.onload = function () {
     board = document.getElementById("board");
@@ -49,7 +49,7 @@ window.onload = function () {
     birdImg.src = "./static/images/bird.png";
     birdImg.onload = function () {
         context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
-    }
+    };
 
     topPipeImg = new Image();
     topPipeImg.src = "./static/images/toppipe.png";
@@ -64,7 +64,7 @@ window.onload = function () {
         e.preventDefault();
         jump();
     }, { passive: false });
-}
+};
 
 function jump() {
     if (!gameOver) {
@@ -101,9 +101,11 @@ function update() {
             showGameOver();
         }
     }
+
     while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
         pipeArray.shift();
     }
+
     context.fillStyle = "#ffffff";
     context.font = "bold 20px 'Courier New', monospace";
     context.textAlign = "left";
@@ -119,6 +121,7 @@ function placePipes() {
     }
     let randomPipeY = pipeY - pipeHeight / 4 - Math.random() * (pipeHeight / 2);
     let openingSpace = board.height / 4;
+
     let topPipe = {
         img: topPipeImg,
         x: pipeX,
@@ -126,7 +129,7 @@ function placePipes() {
         width: pipeWidth,
         height: pipeHeight,
         passed: false
-    }
+    };
     pipeArray.push(topPipe);
 
     let bottomPipe = {
@@ -136,7 +139,7 @@ function placePipes() {
         width: pipeWidth,
         height: pipeHeight,
         passed: false
-    }
+    };
     pipeArray.push(bottomPipe);
 }
 
@@ -144,12 +147,9 @@ function moveBird(e) {
     if ((e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") && !gameOver) {
         velocityY = -6;
     }
-    if (gameOver) {
-        bird.y = birdY;
-        pipeArray = [];
-        score = 0;
-        velocityY = 0;
-        gameOver = false;
+
+    if ((e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") && gameOver) {
+        restart();
     }
 }
 
@@ -162,7 +162,7 @@ function detectCollosion(a, b) {
 }
 
 function showGameOver() {
-     context.fillStyle = "#ff3333";
+    context.fillStyle = "#ff3333";
     context.font = "bold 20px 'Courier New', monospace";
     context.textAlign = "left";
     context.textBaseline = "middle";
